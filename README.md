@@ -8,11 +8,7 @@ A real-time attendance marking system using face recognition. It detects faces v
 
 ```
 CV/
-├── Image/                  # Folder containing known person images
-│   ├── John_Doe.jpg
-│   ├── Jane_Smith.png
-│   └── ...
-├── attendance.py           # Main Python script
+├── app.py                  # Main Python script
 ├── Attendance.csv          # Auto-generated attendance log
 └── README.md
 ```
@@ -92,12 +88,6 @@ pip install face_recognition
    - Use underscores for spaces: `John_Doe.jpg` → displays as `JOHN DOE`
    - Supported formats: `.jpg`, `.jpeg`, `.png`
 
-   ```
-   Image/
-   ├── Anshuman_Jain.jpg
-   ├── Rahul_Sharma.png
-   └── Priya_Singh.jpeg
-   ```
 
 > ⚠️ Make sure each image contains **exactly one clearly visible face** for best accuracy.
 
@@ -106,8 +96,27 @@ pip install face_recognition
 ## ▶️ Running the Project
 
 ```bash
-python attendance.py
+python app.py
 ```
+
+If you have multiple Python versions installed:
+
+```bash
+python3 app.py
+```
+
+If your virtual environment isn't activated yet, activate it first, then run:
+
+- **Windows:**
+  ```bash
+  venv\Scripts\activate
+  python app.py
+  ```
+- **Linux / macOS:**
+  ```bash
+  source venv/bin/activate
+  python app.py
+  ```
 
 On startup, the script will:
 1. Load all images from the `Image/` folder
@@ -139,12 +148,6 @@ On startup, the script will:
 ## 📄 Attendance Log
 
 Attendance is saved automatically to `Attendance.csv` in the project root:
-
-```
-Name,Time
-ANSHUMAN JAIN,09:15:32
-RAHUL SHARMA,09:17:45
-```
 
 - A new entry is added **only once per session** per person.
 - The file is created automatically if it doesn't exist.
@@ -188,4 +191,4 @@ RAHUL SHARMA,09:17:45
 ## 👨‍💻 Author
 
 **Anshuman Jain**  
-GitHub: [@AnshumanJ28](https://github.com/AnshumanJ28)
+GitHub: [@kr-piyush](https://github.com/kr-piyush)
